@@ -13,6 +13,10 @@ namespace MiniMonoMVC4RazorTemplate
     {
 
         protected void Application_Start(object sender, EventArgs e) {
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new MonoWebFormViewEngine());
+            ViewEngines.Engines.Add(new MonoRazorViewEngine());
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
@@ -40,4 +44,23 @@ namespace MiniMonoMVC4RazorTemplate
 
         }
     }
+
+    public class MonoWebFormViewEngine : WebFormViewEngine
+    {
+        protected override bool FileExists(ControllerContext controllerContext, string virtualPath) {
+            return base.FileExists(controllerContext, virtualPath.Replace("~", ""));
+
+        }
+    }
+
+
+    public class MonoRazorViewEngine : RazorViewEngine
+    {
+        protected override bool FileExists(ControllerContext controllerContext, string virtualPath) {
+            return base.FileExists(controllerContext, virtualPath.Replace("~", ""));
+
+        }
+    }
+
+
 }
