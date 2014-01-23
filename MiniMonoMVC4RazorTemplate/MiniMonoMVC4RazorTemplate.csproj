@@ -66,6 +66,11 @@
       <HintPath>CommonDlls\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CommonDlls\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +78,7 @@
     <Content Include="CommonDlls\System.Web.Mvc.dll" />
     <Content Include="CommonDlls\System.Web.Razor.dll" />
     <Content Include="CommonDlls\System.Web.WebPages.dll" />
+    <Content Include="CommonDlls\System.Web.WebPages.Razor.dll" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
